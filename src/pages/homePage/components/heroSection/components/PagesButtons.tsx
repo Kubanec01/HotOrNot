@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const PagesButtons = () => {
   return (
-    <div className="w-11/12 max-w-[70.50rem] mx-auto flex items-center justify-center gap-[100px] mt-[20px]">
+    <div className="w-11/12 max-w-[70.50rem] mx-auto flex items-center justify-center gap-[100px] mt-[8px]">
       {/* GitHub Link Button */}
       <button
         className="px-[9px] py-[6px] text-[17px] font-semibold flex items-center justify-center gap-[3px] rounded-[10px] bg-pink-primary

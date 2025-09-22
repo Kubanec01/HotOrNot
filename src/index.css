@@ -19,5 +19,6 @@ body {
 @theme {
   --color-pink-primary: #f2aec1;
   --color-customWhite: #f7f7f7;
+  --spacing-max-width: 70.50rem; 
 }
 
