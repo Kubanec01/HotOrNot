@@ -1,9 +1,12 @@
+import { GameContextProvider } from "./hooks/contexts/GameContext";
 import MainRoutes from "./MainRoutes";
 
 function App() {
   return (
     <>
-      <MainRoutes />
+      <GameContextProvider>
+        <MainRoutes />
+      </GameContextProvider>
     </>
   );
 }

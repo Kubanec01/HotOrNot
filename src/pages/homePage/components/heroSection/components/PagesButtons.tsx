@@ -16,7 +16,7 @@ const PagesButtons = () => {
         </span>
       </button>
       {/* Portfolio Link Button */}
-      <button className="px-[8px] py-[5px] text-[17px] font-semibold flex items-center justify-center rounded-[10px] text-pink-primary border-pink-primary border-2">
+      <button className="px-[8px] py-[5px] text-[16px] font-semibold flex items-center justify-center rounded-[10px] text-pink-primary border-pink-primary border-2">
         My Web{" "}
         <span className="translate-y-[1px]">
           <IoIosArrowForward  />
