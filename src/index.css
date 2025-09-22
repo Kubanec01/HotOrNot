@@ -1,5 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @import "tailwindcss";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+body {
+  background: url("./assets/pink-background-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Lato", sans-serif;
+}
 
+@theme {
+  --color-pink-primary: #f2aec1;
+  --color-customWhite: #f7f7f7;
+}
 

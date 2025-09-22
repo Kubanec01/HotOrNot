@@ -1,9 +1,9 @@
+import MainRoutes from "./MainRoutes";
+
 function App() {
   return (
     <>
-      <div>
-        <h1>hellooo</h1>
-      </div>
+      <MainRoutes />
     </>
   );
 }
