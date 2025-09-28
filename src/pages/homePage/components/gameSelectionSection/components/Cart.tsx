@@ -70,6 +70,7 @@ const Cart = ({
           backgroundImage: `url(${tertiaryImage})`,
         }}
       />
+      {/* Main Cart */}
       <div
         key={id}
         onMouseEnter={() => setHoveredCart(id)}
