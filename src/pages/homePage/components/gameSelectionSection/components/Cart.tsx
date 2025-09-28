@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useGameContext } from "../../../../../hooks/contexts/GameContext";
 
 const Cart = ({
@@ -7,9 +8,9 @@ const Cart = ({
   text,
   id,
 }: {
-  primaryImage?: string;
-  secondaryImage?: string;
-  tertiaryImage?: string;
+  primaryImage: string;
+  secondaryImage: string;
+  tertiaryImage: string;
   text: string;
   id: "male" | "female";
 }) => {
@@ -26,8 +27,8 @@ const Cart = ({
     "from-pink-primary via-[#ffc0cbc6] via-50% to-[#ffc0cb00] to-90%";
   const hoveredLinear =
     "from-[#F37296] via-[#ed6b90d7] via-50% to-[#f2aec10c] to-90%";
-  const baseSideCart1 = "translate-x-[110px] opacity-0 duration-250";
-  const baseSideCart2 = "-translate-x-[110px] opacity-0 duration-250";
+  const baseSideCart1 = "translate-x-[110px] -translate-y-[10px] opacity-0  duration-250";
+  const baseSideCart2 = "-translate-x-[110px] -translate-y-[10px] opacity-0  duration-250";
   const hoveredSideCart = "translate-x-0 duration-250";
 
   if (hoveredCart === null) {
@@ -47,16 +48,18 @@ const Cart = ({
     sideCart2 = baseSideCart2;
   }
 
-  console.log(hoveredCart);
 
   return (
-    <div className="w-[310px] h-[440px] relative">
+    <Link
+    // ! toto bude potrebne nastavit individualne
+    to="vote-for-man-game"
+    className="w-[310px] h-[440px] relative">
       {/* Left Hover Cart */}
       <div
         className={`w-[245px] h-[356px] rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-secondary absolute bottom-4 -left-[69px] -rotate-19
           ${sideCart1}`}
         style={{
-          backgroundImage: `url(${secondaryImage}) duration-450`,
+          backgroundImage: `url(${secondaryImage})`,
         }}
       />
       {/* Right Hover Cart */}
@@ -64,7 +67,7 @@ const Cart = ({
         className={`w-[245px] h-[356px] rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-secondary absolute bottom-4 -right-[69px] rotate-19
           ${sideCart2}`}
         style={{
-          backgroundImage: `url(${tertiaryImage}) duration-450`,
+          backgroundImage: `url(${tertiaryImage})`,
         }}
       />
       <div
@@ -86,7 +89,7 @@ const Cart = ({
           </h1>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
