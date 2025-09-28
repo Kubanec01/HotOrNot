@@ -1,28 +1,14 @@
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import Navbar from "./Navbar";
-import image01 from "../../../assets/bg-carts-male-img2.jpg";
-import image02 from "../../../assets/bg-carts-male-img1.jpg";
-import image03 from "../../../assets/Satoru-img.png";
+import { maleCharactersData } from "../../../data/animeCharacters/maleCharacters";
+import { Link } from "react-router";
 
 const MaleGamePage = () => {
-  const array = [
-    {
-      id: "1",
-      image: image01,
-    },
-    {
-      id: "2",
-      image: image02,
-    },
-    {
-      id: "3",
-      image: image03,
-    },
-  ];
+  const data = maleCharactersData;
 
   const [actWinner, setActWinner] = useState(0);
   const [nextPlayer, setNextPlayer] = useState(1);
-  const [rounds, setRounds] = useState(array.length);
+  const [rounds, setRounds] = useState(data.length);
   console.log(rounds);
 
   const handlePlayer = (value: number) => {
@@ -48,7 +34,7 @@ const MaleGamePage = () => {
                 className={`w-[310px] h-[440px] rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-primary
         flex justify-center items-end cursor-pointer`}
                 style={{
-                  backgroundImage: `url(${array[actWinner].image})`,
+                  backgroundImage: `url(${data[actWinner].image})`,
                 }}
               ></button>
               <button
@@ -56,7 +42,7 @@ const MaleGamePage = () => {
                 className={`w-[310px] h-[440px] rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-primary
         flex justify-center items-end cursor-pointer`}
                 style={{
-                  backgroundImage: `url(${array[nextPlayer].image})`,
+                  backgroundImage: `url(${data[nextPlayer].image})`,
                 }}
               ></button>
             </section>
@@ -67,15 +53,30 @@ const MaleGamePage = () => {
               className="
             w-11/12 max-w-max-width flex items-center flex-col"
             >
-              <h1 className="mb-2">Winner Is</h1>
-              <button
+              <h1 className="text-center text-3xl text-[#ee7c9c] font-semibold">
+                {data[actWinner].name}
+              </h1>
+              <p className="text-lg text-[#00000051] font-semibold">
+                ({data[actWinner].show})
+              </p>
+              <div
                 onClick={() => handlePlayer(actWinner)}
-                className={`w-[310px] h-[440px] rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-primary
-        flex justify-center items-end cursor-pointer`}
+                className={`w-[310px] h-[440px] mt-4 rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-primary
+        flex justify-center items-end`}
                 style={{
-                  backgroundImage: `url(${array[actWinner].image})`,
+                  backgroundImage: `url(${data[actWinner].image})`,
                 }}
-              ></button>
+              />
+              <h1 className="text-2xl font-semibold mt-[22px]">
+                This is definitely your type! <span>😍</span>
+              </h1>
+              <Link
+                to="/"
+                replace
+                className="px-[16px] py-[11px] bg-pink-primary rounded-[12px] text-white mt-[40px] hover:scale-95 duration-150"
+              >
+                Back To Main Page
+              </Link>
             </section>
           </>
         )}
