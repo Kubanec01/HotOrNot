@@ -1,4 +1,4 @@
-import img1 from "../../../../assets/Welcome Title - Lg.png";
+import img1 from "../../../../assets/Welcome-Title-Lg.png";
 import PagesButtons from "./components/PagesButtons";
 
 const Hero = () => {
