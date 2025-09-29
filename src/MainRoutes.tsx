@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import MainPage from "./pages/homePage/MainPage";
-import MaleGamePage from "./pages/gamePages/maleGamePage/MaleGamePage";
+import MaleGamePage from "./pages/gamePages/gamePage/GamePage";
 
 const MainRoutes = () => {
   return (

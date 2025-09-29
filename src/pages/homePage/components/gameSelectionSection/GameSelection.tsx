@@ -8,7 +8,7 @@ import Cart from "./components/Cart";
 
 const GameSelection = () => {
   return (
-    <section className="select-none max-w-max-width mx-auto flex justify-center items-center gap-[182px] mt-[86px]">
+    <section className="max-w-max-width mx-auto flex justify-center items-center gap-[182px] mt-[86px]">
       <Cart
         id="male"
         primaryImage={primaryMaleImg}

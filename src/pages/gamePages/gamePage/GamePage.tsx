@@ -1,15 +1,18 @@
-import { useState } from "react";
-import Navbar from "./Navbar";
+import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
 import { maleCharactersData } from "../../../data/animeCharacters/maleCharacters";
 import { Link } from "react-router";
+import Modal from "../../../components/Modal";
+import { useGameContext } from "../../../hooks/contexts/GameContext";
 
-const MaleGamePage = () => {
+const GamePage = () => {
   const data = maleCharactersData;
+
+  const { setIsGameRunning } = useGameContext();
 
   const [actWinner, setActWinner] = useState(0);
   const [nextPlayer, setNextPlayer] = useState(1);
   const [rounds, setRounds] = useState(data.length);
-  console.log(rounds);
 
   const handlePlayer = (value: number) => {
     if (value === actWinner) {
@@ -21,9 +24,15 @@ const MaleGamePage = () => {
       setRounds((v) => v - 1);
     }
   };
+  console.log(rounds);
+
+  useEffect(() => {
+    if (rounds === 1) setIsGameRunning(false);
+  }, [rounds]);
 
   return (
     <>
+      <Modal />
       <Navbar />
       <div className="w-full h-screen flex justify-center items-center">
         {rounds > 1 ? (
@@ -85,7 +94,7 @@ const MaleGamePage = () => {
   );
 };
 
-export default MaleGamePage;
+export default GamePage;
 
 // ! je potrebne tu dokoncit nasledujuce TODOS:
 // ! 1. Sprav na buttons Cart component nech v tom nieje taky chaos a zjednot to
