@@ -6,13 +6,9 @@ import tuxedoMaskImg from "../../assets/tuxedo-mask-img.avif";
 import kakashiHatakeImg from "../../assets/kakashi-hatake-img.jpg";
 import sesshomaruImg from "../../assets/sesshomaru-img.jpg";
 import megumiFushiguroImg from "../../assets/Megumi-Fushiguro-Img.jpg";
+import type { CharactersData } from "./types";
 
-type CharactersData = {
-  id: string;
-  name: string;
-  image: string;
-  show: string;
-};
+
 
 export const maleCharactersData: CharactersData[] = [
   {

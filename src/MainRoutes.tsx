@@ -7,7 +7,7 @@ const MainRoutes = () => {
     <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="*" element={<MainPage />} />
-      <Route path="vote-for-man-game" element={<MaleGamePage />} />
+      <Route path="vote-for-anime-characters" element={<MaleGamePage />} />
     </Routes>
   );
 };
