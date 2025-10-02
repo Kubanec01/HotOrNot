@@ -5,6 +5,8 @@ import {
   type Dispatch,
   type ReactNode,
 } from "react";
+import { maleCharactersData } from "../../data/animeCharacters/maleCharacters";
+import type { CharactersData } from "../../data/animeCharacters/types";
 
 type GameContextType = {
   hoveredCart: "male" | "female" | null;
@@ -13,9 +15,14 @@ type GameContextType = {
   setIsModalOpen: Dispatch<React.SetStateAction<boolean>>;
   isGameRunning: boolean;
   setIsGameRunning: Dispatch<React.SetStateAction<boolean>>;
+  setGameData: Dispatch<React.SetStateAction<CharactersData[]>>;
+  gameData: CharactersData[];
 };
 
 const gameContext = createContext<GameContextType | undefined>(undefined);
+
+// Data
+const maleGameData = maleCharactersData;
 
 export const GameContextProvider = ({ children }: { children: ReactNode }) => {
   const [hoveredCart, setHoveredCart] = useState<"male" | "female" | null>(
@@ -24,6 +31,7 @@ export const GameContextProvider = ({ children }: { children: ReactNode }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isGameRunning, setIsGameRunning] = useState(false);
+  const [gameData, setGameData] = useState<CharactersData[]>(maleGameData);
 
   return (
     <gameContext.Provider
@@ -34,6 +42,8 @@ export const GameContextProvider = ({ children }: { children: ReactNode }) => {
         setIsModalOpen,
         isGameRunning,
         setIsGameRunning,
+        setGameData,
+        gameData,
       }}
     >
       {children}

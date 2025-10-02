@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useGameContext } from "../../../../../hooks/contexts/GameContext";
+import type { CharactersData } from "../../../../../data/animeCharacters/types";
 
 const Cart = ({
   primaryImage,
@@ -7,14 +8,17 @@ const Cart = ({
   tertiaryImage,
   text,
   id,
+  gameData,
 }: {
   primaryImage: string;
   secondaryImage: string;
   tertiaryImage: string;
   text: string;
   id: "male" | "female";
+  gameData: CharactersData[];
 }) => {
-  const { hoveredCart, setHoveredCart, setIsGameRunning } = useGameContext();
+  const { hoveredCart, setHoveredCart, setIsGameRunning, setGameData } =
+    useGameContext();
 
   // Variables
   let cartStyle = "";
@@ -52,8 +56,7 @@ const Cart = ({
 
   return (
     <Link
-      // ! toto bude potrebne nastavit individualne
-      to="vote-for-man-game"
+      to="vote-for-anime-characters"
       className="w-[310px] h-[440px] relative"
     >
       {/* Left Hover Cart */}
@@ -79,6 +82,7 @@ const Cart = ({
         onClick={() => {
           setHoveredCart(null);
           setIsGameRunning(true);
+          setGameData(gameData);
         }}
         onMouseLeave={() => setHoveredCart(null)}
         className={`w-full h-full rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-primary
