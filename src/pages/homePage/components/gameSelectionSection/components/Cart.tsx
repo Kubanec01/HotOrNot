@@ -32,10 +32,10 @@ const Cart = ({
   const hoveredLinear =
     "from-[#F37296] via-[#ed6b90d7] via-50% to-[#f2aec10c] to-90%";
   const baseSideCart1 =
-    "translate-x-[110px] -translate-y-[10px] opacity-0  duration-250";
+    "translate-x-[6.875rem] -translate-y-[0.625rem] opacity  duration-250";
   const baseSideCart2 =
-    "-translate-x-[110px] -translate-y-[10px] opacity-0  duration-250";
-  const hoveredSideCart = "translate-x-0 duration-250";
+    "-translate-x-[6.875rem] -translate-y-[0.625rem] opacity-0  duration-250";
+  const hoveredSideCart = "translate-x-0 duration-250 lg:opacity-100";
 
   if (hoveredCart === null) {
     cartStyle = "scale-[1]";
@@ -43,12 +43,12 @@ const Cart = ({
     sideCart2 = baseSideCart2;
     linearGradientStyle = baseLinear;
   } else if (hoveredCart === id) {
-    cartStyle = "scale-[105%] border-pink-secondary";
+    cartStyle = "lg:scale-[105%] scale-[102%] border-pink-secondary";
     sideCart1 = hoveredSideCart;
     sideCart2 = hoveredSideCart;
     linearGradientStyle = hoveredLinear;
   } else {
-    cartStyle = "scale-[0.8]";
+    cartStyle = "lg:scale-[0.8] scale-[0.9]";
     linearGradientStyle = baseLinear;
     sideCart1 = baseSideCart1;
     sideCart2 = baseSideCart2;
@@ -57,20 +57,20 @@ const Cart = ({
   return (
     <Link
       to="vote-for-anime-characters"
-      className="w-[310px] h-[440px] relative"
+      className="xl:w-[19.375rem] md:w-[18.125rem] w-[90%] xl:h-[27.5rem] md:h-[25rem] h-[10rem] relative"
     >
       {/* Left Hover Cart */}
       <div
-        className={`w-[245px] h-[356px] rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-secondary absolute bottom-4 -left-[69px] -rotate-19
-          ${sideCart1}`}
+        className={`xl:w-[15.313rem] w-[12.5rem] xl:h-[22.25rem] h-[19.75rem] rounded-[0.875rem] bg-no-repeat bg-cover bg-center border-[0.375rem] border-pink-secondary absolute bottom-4 xl:-left-[4.313rem] -left-[3.75rem] -rotate-19
+          ${sideCart1} opacity-0`}
         style={{
           backgroundImage: `url(${secondaryImage})`,
         }}
       />
       {/* Right Hover Cart */}
       <div
-        className={`w-[245px] h-[356px] rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-secondary absolute bottom-4 -right-[69px] rotate-19
-          ${sideCart2}`}
+        className={`xl:w-[15.313rem] w-[12.5rem] xl:h-[22.25rem] h-[19.75rem] rounded-[0.875rem] bg-no-repeat bg-cover bg-center border-[0.375rem] border-pink-secondary absolute bottom-4 xl:-right-[4.313rem] -right-[3.75rem] rotate-19
+          ${sideCart2} opacity-0`}
         style={{
           backgroundImage: `url(${tertiaryImage})`,
         }}
@@ -85,7 +85,7 @@ const Cart = ({
           setGameData(gameData);
         }}
         onMouseLeave={() => setHoveredCart(null)}
-        className={`w-full h-full rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-primary
+        className={`w-full h-full rounded-[0.875rem] bg-no-repeat bg-cover bg-center border-[0.375rem] border-pink-primary
         flex justify-center items-end cursor-pointer ${cartStyle} duration-150 ease-initial relative`}
         style={{
           backgroundImage: `url(${primaryImage})`,
@@ -93,9 +93,9 @@ const Cart = ({
       >
         {/* TEXT */}
         <div
-          className={`w-full h-[56%] bg-linear-to-t ${linearGradientStyle} duration-150 ease-initial flex justify-start items-end`}
+          className={`w-full md:h-[56%] h-[86%] bg-linear-to-t ${linearGradientStyle} duration-150 ease-initial flex justify-start items-end`}
         >
-          <h1 className="text-[26px] font-semibold text-[white] ml-[20px] mb-[48px]">
+          <h1 className="md:text-[1.625rem] text-xl font-semibold text-[white] md:ml-[1.25rem] ml-[0.625rem] md:mb-[3rem] mb-[1.125rem]">
             {text}
           </h1>
         </div>
