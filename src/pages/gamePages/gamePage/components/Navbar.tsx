@@ -8,18 +8,18 @@ const Navbar = () => {
   const buttonVisibility = isGameRunning ? "block" : "hidden";
 
   return (
-    <div className="bg-pink-primary w-full h-[78px] flex justify-center items-center fixed">
+    <div className="bg-pink-primary w-full h-[4.875rem] flex justify-center items-center fixed">
       {/* Back Navigate Button */}
       <button
         onClick={() => setIsModalOpen(true)}
-        className={`${buttonVisibility} absolute cursor-pointer left-[4%] top-2/4 -translate-y-[50%] md:text-[30px] text-[24px] text-customWhite hover:bg-pink-tertiary duration-150 ease-linear p-[7px] rounded-[50px]`}
+        className={`${buttonVisibility} absolute cursor-pointer left-[4%] top-2/4 -translate-y-[50%] md:text-[1.875rem] text-[1.5rem] text-customWhite hover:bg-pink-tertiary duration-150 ease-linear p-[0.438rem] rounded-[3.125rem]`}
       >
         <IoArrowBack />
       </button>
       {/* Logo Img */}
       <img
         src={logoImg}
-        className="object-cover w-[160px] h-auto mt-4 "
+        className="object-cover w-[10rem] h-auto mt-4 "
         alt=""
       />
     </div>
