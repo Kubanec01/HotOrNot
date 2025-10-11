@@ -57,7 +57,7 @@ const Cart = ({
   return (
     <Link
       to="vote-for-anime-characters"
-      className="xl:w-[19.375rem] md:w-[18.125rem] w-[90%] xl:h-[27.5rem] md:h-[25rem] h-[10rem] relative"
+      className="xl:w-[19.375rem] md:w-[18.125rem] w-[90%] xl:h-[27.5rem] md:h-[25rem] h-[14rem] relative"
     >
       {/* Left Hover Cart */}
       <div

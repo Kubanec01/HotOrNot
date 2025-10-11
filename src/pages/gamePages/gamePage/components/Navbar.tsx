@@ -12,14 +12,14 @@ const Navbar = () => {
       {/* Back Navigate Button */}
       <button
         onClick={() => setIsModalOpen(true)}
-        className={`${buttonVisibility} absolute cursor-pointer left-[58px] top-2/4 -translate-y-[50%] text-[30px] text-customWhite hover:bg-pink-tertiary duration-150 ease-linear p-[7px] rounded-[50px]`}
+        className={`${buttonVisibility} absolute cursor-pointer left-[4%] top-2/4 -translate-y-[50%] md:text-[30px] text-[24px] text-customWhite hover:bg-pink-tertiary duration-150 ease-linear p-[7px] rounded-[50px]`}
       >
         <IoArrowBack />
       </button>
       {/* Logo Img */}
       <img
         src={logoImg}
-        className="object-cover w-[160px] h-auto mt-4 -ml-12"
+        className="object-cover w-[160px] h-auto mt-4 "
         alt=""
       />
     </div>

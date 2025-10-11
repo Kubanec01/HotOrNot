@@ -14,7 +14,7 @@ const femaleGameData = femaleCharactersData;
 
 const GameSelection = () => {
   return (
-    <section className="max-w-max-width w-11/12 mx-auto flex md:flex-row flex-col justify-center items-center lg:gap-[11.375rem] md:gap-[9.375rem] gap-[1rem] md:mt-[86px] mt-[56px] md:overflow-visible overflow-hidden">
+    <section className="max-w-max-width w-11/12 mx-auto flex md:flex-row flex-col justify-center items-center lg:gap-[11.375rem] md:gap-[6.375rem] gap-4 md:mt-[5.375rem] mt-[3.5rem] md:overflow-visible overflow-hidden">
       <Cart
         id="male"
         primaryImage={primaryMaleImg}

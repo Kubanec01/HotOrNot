@@ -36,8 +36,9 @@ const GamePage = () => {
       <Navbar />
       <div className="w-full h-screen flex justify-center items-center">
         {rounds > 1 ? (
+          // Game Is Running
           <>
-            <section className="w-11/12 max-w-max-width flex justify-center gap-[200px]">
+            <section className="w-10/12 max-w-max-width-sec flex md:flex-row flex-col items-center justify-between md:gap-0 gap-8 md:pt-0 pt-40 pb-10">
               <CartButton
                 onClickFunction={() => handlePlayer(actWinner)}
                 image={data[actWinner].image}
@@ -49,32 +50,33 @@ const GamePage = () => {
             </section>
           </>
         ) : (
+          // Game Is Not Running
           <>
             <section
               className="
             w-11/12 max-w-max-width flex items-center flex-col"
             >
-              <h1 className="text-center text-3xl text-[#ee7c9c] font-semibold">
+              <h1 className="text-center lg:text-3xl text-2xl text-[#ee7c9c] font-semibold">
                 {data[actWinner].name}
               </h1>
-              <p className="text-lg text-[#00000051] font-semibold">
+              <p className="md:text-lg text-[#00000051] font-semibold">
                 ({data[actWinner].show})
               </p>
               <div
                 onClick={() => handlePlayer(actWinner)}
-                className={`w-[310px] h-[440px] mt-4 rounded-[14px] bg-no-repeat bg-cover bg-center border-[6px] border-pink-primary
+                className={`lg:w-[19.375rem] md:w-[17.125rem] w-[15.125rem] lg:h-[27.5rem] md:h-[25rem] h-[22rem] mt-4 rounded-[0.875rem] bg-no-repeat bg-cover bg-center border-[0.375rem] border-pink-primary
         flex justify-center items-end`}
                 style={{
                   backgroundImage: `url(${data[actWinner].image})`,
                 }}
               />
-              <h1 className="text-2xl font-semibold mt-[22px]">
+              <h1 className="lg:text-2xl md:text-xl text-lg font-semibold md:mt-[1.375rem] mt-[1rem]">
                 This is definitely your type! <span>😍</span>
               </h1>
               <Link
                 to="/"
                 replace
-                className="px-[16px] py-[11px] bg-pink-primary rounded-[12px] text-white mt-[40px] hover:scale-95 duration-150"
+                className="md:px-4 px-2 md:py-[0.688rem] py-[0.588rem] md:text-base text-sm bg-pink-primary rounded-[0.75rem] text-white lg:mt-[2.5rem] md:mt-[2rem] mt-[1.4rem] hover:scale-95 duration-150"
               >
                 Back To Main Page
               </Link>
@@ -87,7 +89,3 @@ const GamePage = () => {
 };
 
 export default GamePage;
-
-// ! je potrebne tu dokoncit nasledujuce TODOS:
-// ! 3. Sprav jednotlive datas na zenske a muzske arrays
-// ! 4. Sorav tuto cast plne prisposoivu - cize ak je vote for men tak budu Array s chlapmi a naopak
