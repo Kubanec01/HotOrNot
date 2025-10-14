@@ -1,6 +1,8 @@
 import { Link } from "react-router";
 import { useGameContext } from "../../../../../hooks/contexts/GameContext";
 import type { CharactersData } from "../../../../../data/animeCharacters/types";
+import { motion } from "motion/react";
+import { fromUpToDownVisibility } from "../../../../../components/framerMotionVarinats";
 
 const Cart = ({
   primaryImage,
@@ -60,7 +62,7 @@ const Cart = ({
       className="xl:w-[19.375rem] md:w-[18.125rem] w-[90%] xl:h-[27.5rem] md:h-[25rem] h-[14rem] relative"
     >
       {/* Left Hover Cart */}
-      <div
+      <motion.div
         className={`xl:w-[15.313rem] w-[12.5rem] xl:h-[22.25rem] h-[19.75rem] rounded-[0.875rem] bg-no-repeat bg-cover bg-center border-[0.375rem] border-pink-secondary absolute bottom-4 xl:-left-[4.313rem] -left-[3.75rem] -rotate-19
           ${sideCart1} opacity-0`}
         style={{
@@ -76,7 +78,10 @@ const Cart = ({
         }}
       />
       {/* Main Cart */}
-      <div
+      <motion.div
+        variants={fromUpToDownVisibility}
+        initial="offscreenPrimary"
+        whileInView="onscreenPrimary"
         key={id}
         onMouseEnter={() => setHoveredCart(id)}
         onClick={() => {
@@ -99,7 +104,7 @@ const Cart = ({
             {text}
           </h1>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 };

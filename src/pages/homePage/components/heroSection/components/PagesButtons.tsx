@@ -1,9 +1,17 @@
+import { motion } from "motion/react";
 import { FaGithub } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import { fromUpToDownVisibility } from "../../../../../components/framerMotionVarinats";
 
 const PagesButtons = () => {
   return (
-    <div className="w-11/12 max-w-[70.50rem] mx-auto flex items-center justify-center md:gap-[6.25rem] gap-[2.25rem] lg:mt-[0.5rem] md:mt-[0.9rem] mt-10">
+    <motion.div
+      variants={fromUpToDownVisibility}
+      initial="offscreenPrimary"
+      whileInView="onscreenPrimary"
+      viewport={{ once: true }}
+      className="w-11/12 max-w-[70.50rem] mx-auto flex items-center justify-center md:gap-[6.25rem] gap-[2.25rem] lg:mt-[0.5rem] md:mt-[0.9rem] mt-10"
+    >
       {/* GitHub Link Button */}
       <a
         className="md:px-[0.563rem] px-2 md:py-[6px] py-1 lg:text-[1.063rem] md:text-[0.875rem] text-sm md:font-semibold flex items-center justify-center gap-[0.188rem] rounded-[10px] bg-pink-primary
@@ -27,7 +35,7 @@ const PagesButtons = () => {
           <IoIosArrowForward />
         </span>
       </a>
-    </div>
+    </motion.div>
   );
 };
 
