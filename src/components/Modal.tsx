@@ -14,18 +14,18 @@ const Modal = () => {
         Do you really want to leave during the game? There are still a lot of
         hot characters waiting for you!
       </h1>
-      <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto md:mt-[2.875rem] mt-[1.5rem]">
+      <div className="flex justify-between items-center md:w-[80%] w-[92%] mx-auto md:mt-[2.875rem] mt-[1.5rem]">
         <Link
           to="/"
           replace
           onClick={() => setIsModalOpen(false)}
-          className="md:px-[0.875rem] px-[0.313rem] md:py-[0.5rem] py-[0.25rem] rounded-[0.75rem] bg-pink-primary text-white font-semibold md:text-sm text-[0.625rem] md:text-left text-center"
+          className="md:px-[0.875rem] px-[0.513rem] md:py-[0.5rem] py-[0.25rem] rounded-[0.75rem] bg-pink-primary text-white font-semibold md:text-sm text-[0.625rem] md:text-left text-center"
         >
           Back To Main Page
         </Link>
         <button
           onClick={() => setIsModalOpen(false)}
-          className="md:px-[0.875rem] px-[0.313rem] md:py-[0.5rem] py-[0.25rem] rounded-[0.75rem] border-pink-primary md:border-2 border-1 text-pink-primary font-semibold md:text-sm text-[0.625rem] md:text-left cursor-pointer"
+          className="md:px-[0.875rem] px-[0.513rem] md:py-[0.5rem] py-[0.25rem] rounded-[0.75rem] border-pink-primary md:border-2 border-1 text-pink-primary font-semibold md:text-sm text-[0.625rem] md:text-left cursor-pointer"
         >
           Nuh, I'm just kidding
         </button>

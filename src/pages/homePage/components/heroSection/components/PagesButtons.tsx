@@ -1,12 +1,15 @@
 import { motion } from "motion/react";
 import { FaGithub } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
-import { fromUpToDownVisibility } from "../../../../../components/framerMotionVarinats";
+import { fromUpToDownVisibility } from "../../../../../components/framerMotionVariants";
+import { useIsMobileView } from "../../../../../components/hooks/useIsMobileView";
 
 const PagesButtons = () => {
+  const isMobile = useIsMobileView();
+
   return (
     <motion.div
-      variants={fromUpToDownVisibility}
+      variants={isMobile ? {} : fromUpToDownVisibility}
       initial="offscreenPrimary"
       whileInView="onscreenPrimary"
       viewport={{ once: true }}

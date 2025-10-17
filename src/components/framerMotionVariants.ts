@@ -18,7 +18,7 @@ export const fromUpToDownVisibility: Variants = {
   //   Secondary Variants
   offscreenSecondary: {
     opacity: 0,
-    y: -40,
+    y: -30,
   },
   onscreenSecondary: {
     opacity: 1,

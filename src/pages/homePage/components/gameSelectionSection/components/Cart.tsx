@@ -2,7 +2,8 @@ import { Link } from "react-router";
 import { useGameContext } from "../../../../../hooks/contexts/GameContext";
 import type { CharactersData } from "../../../../../data/animeCharacters/types";
 import { motion } from "motion/react";
-import { fromUpToDownVisibility } from "../../../../../components/framerMotionVarinats";
+import { fromUpToDownVisibility } from "../../../../../components/framerMotionVariants";
+import { useIsMobileView } from "../../../../../components/hooks/useIsMobileView";
 
 const Cart = ({
   primaryImage,
@@ -56,13 +57,16 @@ const Cart = ({
     sideCart2 = baseSideCart2;
   }
 
+  // Media Screen Hook
+  const isMobile = useIsMobileView();
+
   return (
     <Link
       to="vote-for-anime-characters"
       className="xl:w-[19.375rem] md:w-[18.125rem] w-[90%] xl:h-[27.5rem] md:h-[25rem] h-[14rem] relative"
     >
       {/* Left Hover Cart */}
-      <motion.div
+      <div
         className={`xl:w-[15.313rem] w-[12.5rem] xl:h-[22.25rem] h-[19.75rem] rounded-[0.875rem] bg-no-repeat bg-cover bg-center border-[0.375rem] border-pink-secondary absolute bottom-4 xl:-left-[4.313rem] -left-[3.75rem] -rotate-19
           ${sideCart1} opacity-0`}
         style={{
@@ -79,7 +83,7 @@ const Cart = ({
       />
       {/* Main Cart */}
       <motion.div
-        variants={fromUpToDownVisibility}
+        variants={isMobile ? {} : fromUpToDownVisibility}
         initial="offscreenPrimary"
         whileInView="onscreenPrimary"
         key={id}
