@@ -51,10 +51,10 @@ const GamePage = () => {
           </>
         ) : (
           // Game Is Not Running
-          <>
+          <>Ï
             <section
               className="
-            w-11/12 max-w-max-width flex items-center flex-col"
+            w-11/12 max-w-max-width flex items-center flex-col 2xl:mt-0 mt-[3.25rem]"
             >
               <h1 className="text-center lg:text-3xl text-2xl text-[#ee7c9c] font-semibold">
                 {data[actWinner].name}
@@ -62,9 +62,10 @@ const GamePage = () => {
               <p className="md:text-lg text-[#00000051] font-semibold">
                 ({data[actWinner].show})
               </p>
+              {/* Cart */}
               <div
                 onClick={() => handlePlayer(actWinner)}
-                className={`lg:w-[19.375rem] md:w-[17.125rem] w-[15.125rem] lg:h-[27.5rem] md:h-[25rem] h-[22rem] mt-4 rounded-[0.875rem] bg-no-repeat bg-cover bg-center border-[0.375rem] border-pink-primary
+                className={`lg:w-[19.375rem] md:w-[17.125rem] w-[15.125rem] 2xl:h-[27.5rem] md:h-[25rem] h-[22rem] mt-4 rounded-[0.875rem] bg-no-repeat bg-cover bg-center border-[0.375rem] border-pink-primary
         flex justify-center items-end`}
                 style={{
                   backgroundImage: `url(${data[actWinner].image})`,
@@ -76,7 +77,7 @@ const GamePage = () => {
               <Link
                 to="/"
                 replace
-                className="md:px-4 px-2 md:py-[0.688rem] py-[0.588rem] md:text-base text-sm bg-pink-primary rounded-[0.75rem] text-white lg:mt-[2.5rem] md:mt-[2rem] mt-[1.4rem] hover:scale-95 duration-150"
+                className="md:px-4 px-2 md:py-[0.688rem] py-[0.588rem] md:text-base text-sm bg-pink-primary rounded-[0.75rem] text-white 2xl:mt-[2.5rem] md:mt-[1.2rem] mt-[1.4rem] hover:scale-95 duration-150"
               >
                 Back To Main Page
               </Link>

@@ -9,7 +9,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="sm:w-11/12 max-w-max-width mx-auto lg:mt-0 md:mt-6 mt-10 px-1">
+      <div className="sm:w-11/12 max-w-max-width mx-auto lg:-mt-6 md:mt-6 mt-10 px-1">
         <motion.img
           variants={isMobile ? {} : fromUpToDownVisibility}
           initial="offscreenSecondary"
